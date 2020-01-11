@@ -18,22 +18,19 @@ class QuestList extends React.Component {
       <div id='quests'>
         <label>Quests</label> <br />
         <select id="quests" multiple size="13">
-          <optgroup label="Free Quests">
+          <optgroup label="Free Quests" />
             {this.state.free.map((quest, i) => {
-              return <Quest name={quest} key={i} complete={this.state.complete.indexOf(quest) !== -1 ? true : false} />
+              return <option value={quest} key={i} style={this.state.complete.indexOf(quest) !== -1 ? {color: 'green'} : {color: 'red'}}>{quest}</option>;
             })}
-          </optgroup>
-          <optgroup label="Member's Quests">
+          <optgroup label="Member's Quests" />
             {this.state.mems.map((quest, i) => {
-              return <Quest name={quest} key={i} complete={this.state.complete.indexOf(quest) !== -1 ? true : false} />
+              return <option value={quest} key={i} style={this.state.complete.indexOf(quest) !== -1 ? {color: 'green'} : {color: 'red'}}>{quest}</option>;
             })}
-          </optgroup>
-          <optgroup label="Miniquests">
+          <optgroup label="Miniquests" />
             {this.state.mini.map((quest, i) => {
-              return <Quest name={quest} key={i} complete={this.state.complete.indexOf(quest) !== -1 ? true : false} />
+              return <option value={quest} key={i} style={this.state.complete.indexOf(quest) !== -1 ? {color: 'green'} : {color: 'red'}}>{quest}</option>
             })}
-          </optgroup>
-        </select>
+        </select><br />
         <button id="complete" type="submit">Mark as Complete</button>
         <button id="incomplete" type="submit">Mark as Incomplete</button>
         <button id="add-quest" type="submit">Add to List</button>
