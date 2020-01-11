@@ -1,0 +1,17 @@
+select {
+  width: 220px;
+}
+    
+.goalInput {
+  width: 16px;
+}
+    
+th, td {
+  padding: 10px;
+  text-align: center;
+  font-family: free, sans;
+}
+    
+label {
+  font-family: "free", sans;
+}
