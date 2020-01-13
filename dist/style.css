@@ -7,11 +7,28 @@ select {
 }
     
 th, td {
-  padding: 10px;
+  padding: 5px;
   text-align: center;
-  font-family: free, sans;
+  font-family: arial;
 }
     
-label {
-  font-family: "free", sans;
+label, .header {
+  font-family: arial;
+}
+
+.bigcontainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header {
+  font-family: arial;
+}
+
+body, select {
+  background-color: #3f5263;
+}
+
+option, optgroup, select, label, .header, th, td {
+  color: white;
 }
