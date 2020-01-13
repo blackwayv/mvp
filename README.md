@@ -1,4 +1,5 @@
-###Old School RuneScape Account Planner###
+Old School RuneScape Account Planner
+
 Installation:
 git clone https://github.com/blackwayv/mvp.git
 
