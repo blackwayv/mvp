@@ -1,23 +1,24 @@
-Old School RuneScape Account Planner
+### Old School RuneScape Account Planner
 
-Installation:
+##### Installation:
+`
 git clone https://github.com/blackwayv/mvp.git
-
-Starting:
+`
+##### Starting:
 
 First, install dependencies so the program can run:
-
+`
 npm install
-
+`
 Then, you will need to use run scripts to prepare the files:
-
+`
 npm run react-dev
-
+`
 Finally, you are ready to start the website!
-
+`
 npm start
-
-Usage:
+`
+##### Usage:
 
 Currently the program uses localstorage to store all data. Once this has become a website, I can run
 a PostgreSQL database on the instance to keep all the data in cloud storage so it stays persistant.
