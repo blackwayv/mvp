@@ -7,14 +7,17 @@ git clone https://github.com/blackwayv/mvp.git
 ##### Starting:
 
 First, install dependencies so the program can run:
+
 `
 npm install
 `
 Then, you will need to use run scripts to prepare the files:
+
 `
 npm run react-dev
 `
 Finally, you are ready to start the website!
+
 `
 npm start
 `
