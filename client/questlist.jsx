@@ -39,9 +39,15 @@ class QuestList extends React.Component {
               }
             }
           }
-          this.props.update({ quests: questArr });
           let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
           user.quests = questArr;
+          for (let i = 0; i < user.todo.length; ++i) {
+            if (questArr.includes(user.todo[i])) {
+              user.todo.splice(i, 1);
+              --i;
+            }
+          }
+          this.props.update(user);
           window.localStorage.setItem(user.username, JSON.stringify(user));
         }}>Mark as Complete</button>
         <button id="incomplete" type="submit" onClick={e => {
