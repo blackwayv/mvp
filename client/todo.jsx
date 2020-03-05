@@ -42,10 +42,40 @@ class ToDo extends React.Component {
           window.localStorage.setItem(user.username, JSON.stringify(user));
         }}>Remove</button><br />
         <label>Move selected:</label>
-        <button id="top" type="submit">Top</button>
-        <button id="up" type="submit">Up</button>
+        <button id="top" type="submit" onClick={e => {
+          let l = document.getElementById('list');
+          let todoArr = this.props.state.todo;
+          let topArr = [];
+          for (let i = 0; i < l.options.length; ++i) {
+            if (l.options[i].selected) {
+              l.options[i].selected = false;
+              topArr.push(todoArr.splice(todoArr.indexOf(l.options[i].value), 1)[0]);
+            }
+          }
+          todoArr = topArr.concat(todoArr);
+          this.props.update({ todo: todoArr });
+          let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
+          user.todo = todoArr;
+          window.localStorage.setItem(user.username, JSON.stringify(user));
+        }}>Top</button>
+        <button id="up" type="submit" >Up</button>
         <button id="down" type="submit">Down</button>
-        <button id="bottom" type="submit">Bottom</button>
+        <button id="bottom" type="submit" onClick={e => {
+          let l = document.getElementById('list');
+          let todoArr = this.props.state.todo;
+          let bottomArr = [];
+          for (let i = 0; i < l.options.length; ++i) {
+            if (l.options[i].selected) {
+              l.options[i].selected = false;
+              bottomArr.push(todoArr.splice(todoArr.indexOf(l.options[i].value), 1)[0]);
+            }
+          }
+          todoArr = todoArr.concat(bottomArr);
+          this.props.update({ todo: todoArr });
+          let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
+          user.todo = todoArr;
+          window.localStorage.setItem(user.username, JSON.stringify(user));
+        }}>Bottom</button>
         {/* <button id="save" type="submit">Save changes</button> */}
       </div>
     );
