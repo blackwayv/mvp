@@ -58,8 +58,42 @@ class ToDo extends React.Component {
           user.todo = todoArr;
           window.localStorage.setItem(user.username, JSON.stringify(user));
         }}>Top</button>
-        <button id="up" type="submit" >Up</button>
-        <button id="down" type="submit">Down</button>
+        <button id="up" type="submit" onClick={e => {
+          let l = document.getElementById('list');
+          let todoArr = this.props.state.todo;
+          for (let i = 0; i < l.options.length; ++i) {
+            if (l.options[i].selected && i > 0) {
+              l.options[i].selected = false;
+              let index = todoArr.indexOf(l.options[i].value);
+              let temp = l.options[i].value;
+              todoArr[index] = todoArr[index-1];
+              todoArr[index-1] = temp;
+              l.options[i-1].selected = true;
+            }
+          }
+          this.props.update({ todo: todoArr });
+          let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
+          user.todo = todoArr;
+          window.localStorage.setItem(user.username, JSON.stringify(user));
+        }}>Up</button>
+        <button id="down" type="submit" onClick={e => {
+          let l = document.getElementById('list');
+          let todoArr = this.props.state.todo;
+          for (let i = l.options.length-1; i >= 0; --i) {
+            if (l.options[i].selected && i < l.options.length-1) {
+              l.options[i].selected = false;
+              let index = todoArr.indexOf(l.options[i].value);
+              let temp = l.options[i].value;
+              todoArr[index] = todoArr[index+1];
+              todoArr[index+1] = temp;
+              l.options[i+1].selected = true;
+            }
+          }
+          this.props.update({ todo: todoArr });
+          let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
+          user.todo = todoArr;
+          window.localStorage.setItem(user.username, JSON.stringify(user));
+        }}>Down</button>
         <button id="bottom" type="submit" onClick={e => {
           let l = document.getElementById('list');
           let todoArr = this.props.state.todo;
@@ -76,7 +110,6 @@ class ToDo extends React.Component {
           user.todo = todoArr;
           window.localStorage.setItem(user.username, JSON.stringify(user));
         }}>Bottom</button>
-        {/* <button id="save" type="submit">Save changes</button> */}
       </div>
     );
   }
