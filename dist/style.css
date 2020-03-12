@@ -10,6 +10,10 @@ select {
 .goalInput {
   width: 16px;
 }
+
+table {
+  display: inline-block;
+}
     
 th, td {
   padding: 5px;
@@ -24,6 +28,7 @@ label, .header {
 .bigcontainer {
   display: flex;
   justify-content: space-between;
+  text-align: center;
 }
 
 .header {
@@ -36,4 +41,10 @@ body, select {
 
 option, optgroup, select, label, .header, th, td {
   color: white;
+}
+
+@media screen and (max-width: 620px) {
+  .bigcontainer {
+    flex-direction: column;
+  }
 }
