@@ -23,6 +23,7 @@ th, td {
     
 label, .header {
   font-family: arial;
+  font-weight: bold;
 }
 
 .bigcontainer {
@@ -31,7 +32,7 @@ label, .header {
   text-align: center;
 }
 
-.header {
+.header, body {
   font-family: arial;
 }
 
@@ -39,7 +40,7 @@ body, select {
   background-color: #3f5263;
 }
 
-option, optgroup, select, label, .header, th, td {
+body, option, optgroup, select, label, .header, th, td {
   color: white;
 }
 

@@ -41,7 +41,7 @@ class ToDo extends React.Component {
           user.todo = todoArr;
           window.localStorage.setItem(user.username, JSON.stringify(user));
         }}>Remove</button><br />
-        <label>Move selected:</label>
+        Move selected: 
         <button id="top" type="submit" onClick={e => {
           let l = document.getElementById('list');
           let todoArr = this.props.state.todo;
