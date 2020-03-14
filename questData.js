@@ -2,7 +2,7 @@ export default {
     free: {
       "Black Knights' Fortress": {
         quests: [],
-        skills: { questPoints: 12 },
+        skills: { questpoints: 12 },
         points: 3,
         guide: "https://oldschool.runescape.wiki/w/Black_Knights%27_Fortress" },
       "Cook's Assistant": {
@@ -108,8 +108,18 @@ export default {
     },
     mems: {
       "Animal Magnetism": {
-        quests: [],
-        skills: {},
+        quests: [
+          "The Restless Ghost",
+          "Ernest the Chicken",
+          "Priest in Peril"
+        ],
+        skills: {
+          slayer: 18,
+          crafting: 19,
+          ranged: 30,
+          woodcutting: 35,
+          prayer: 31
+        },
         points: 1,
         guide: "" },
       "Another Slice of H.A.M.": {

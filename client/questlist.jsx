@@ -6,8 +6,44 @@ class QuestList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      questPoints: 0
+      questPoints: 0,
+      selected: "Black Knights' Fortress"
     };
+  }
+
+  generateReqs() {
+    let requirements = [ <label>Requirements:</label> ];
+    let q;
+    if (quests.mems[this.state.selected]) {
+      q = quests.mems[this.state.selected];
+      for (let skill in q.skills) {
+        if (this.props.state.skills[skill] < q.skills[skill]) {
+          requirements.push(<div>{q.skills[skill] + ' ' + skill}</div>);
+        } else {
+          requirements.push(<div className='met'>{q.skills[skill] + ' ' + skill}</div>);
+        }
+      }
+      requirements.push(<br/>);
+      for (let quest of q.quests) {
+        if (this.props.state.quests.indexOf(quest) === -1) {
+          requirements.push(<div>{quest}</div>);
+        } else {
+          requirements.push(<div className='met'>{quest}</div>);
+        }
+      }
+    } else if (quests.free[this.state.selected]) {
+      q = quests.free[this.state.selected];
+    } else {
+      q = quests.mini[this.state.selected];
+    }
+    if (requirements.length === 2) {
+      requirements.push(<div>None</div>);
+    } else if (requirements.length > 10) {
+      requirements = requirements.slice(0, 9);
+      requirements[9] = <div>...and more. See guide:</div>
+    }
+    requirements.push(<a href={q.guide}>OSRS Wiki Guide</a>);
+    return requirements;
   }
 
   calculateQP() {
@@ -36,12 +72,14 @@ class QuestList extends React.Component {
   }
 
   render() {
-    let q = document.getElementById('quests');
     return (
       <div id='questlist'> 
         <label>Quests<br/></label>
         Quest Points: {this.state.questPoints}<br />
-        <select id="quests" multiple size="13">
+        <select id="quests" multiple size="13" onChange={e => {
+          let q = document.getElementById('quests');
+          this.setState({ selected: q.options[q.selectedIndex].value })
+        }}>
           <optgroup label="Free Quests" />
             {Object.keys(quests.free).map((quest, i) => {
               return <option value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: 'green'} : {color: 'red'}}>{quest}</option>;
@@ -55,12 +93,9 @@ class QuestList extends React.Component {
               return <option value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: 'green'} : {color: 'red'}}>{quest}</option>
             })}
         </select>
-        {/* <div className="requirements">
-          {document.getElementById('quests').selectedIndex ? <label>Requirements:</label> : ''}<br/>
-          {document.getElementById('quests').options[document.getElementById('quests').selectedIndex].quests.map((quest, i) => {
-            <div></div>
-          })}
-        </div> */}
+        <div className="requirements">
+          {this.props.state.quests ? this.generateReqs() : ''}
+        </div>
         <br/>
         <button id="complete" onClick={e => {
           let q = document.getElementById('quests');

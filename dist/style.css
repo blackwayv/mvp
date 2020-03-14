@@ -44,6 +44,16 @@ body, option, optgroup, select, label, .header, th, td {
   color: white;
 }
 
+.requirements {
+  width: 220px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.met {
+  text-decoration: line-through;
+}
+
 @media screen and (max-width: 620px) {
   .bigcontainer {
     flex-direction: column;
