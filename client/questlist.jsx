@@ -16,25 +16,27 @@ class QuestList extends React.Component {
     let q;
     if (quests.mems[this.state.selected]) {
       q = quests.mems[this.state.selected];
-      for (let skill in q.skills) {
-        if (this.props.state.skills[skill] < q.skills[skill]) {
-          requirements.push(<div>{q.skills[skill] + ' ' + skill}</div>);
-        } else {
-          requirements.push(<div className='met'>{q.skills[skill] + ' ' + skill}</div>);
-        }
-      }
-      requirements.push(<br/>);
-      for (let quest of q.quests) {
-        if (this.props.state.quests.indexOf(quest) === -1) {
-          requirements.push(<div>{quest}</div>);
-        } else {
-          requirements.push(<div className='met'>{quest}</div>);
-        }
-      }
     } else if (quests.free[this.state.selected]) {
       q = quests.free[this.state.selected];
     } else {
       q = quests.mini[this.state.selected];
+    }
+    for (let skill in q.skills) {
+      if (this.props.state.skills[skill] < q.skills[skill]) {
+        requirements.push(<div>{q.skills[skill] + ' ' + skill}</div>);
+      } else {
+        requirements.push(<div className='met'>{q.skills[skill] + ' ' + skill}</div>);
+      }
+    }
+    if (q.quests.length > 0) {
+      requirements.push(<br/>);
+    }
+    for (let quest of q.quests) {
+      if (this.props.state.quests.indexOf(quest) === -1) {
+        requirements.push(<div>{quest}</div>);
+      } else {
+        requirements.push(<div className='met'>{quest}</div>);
+      }
     }
     if (requirements.length === 2) {
       requirements.push(<div>None</div>);
