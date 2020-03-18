@@ -3,8 +3,16 @@ body {
   margin-right: 8vw;
 }
 
-select {
+#profile {
+  margin-bottom: 1rem;
+}
+
+#quests {
   width: 220px;
+}
+
+#list {
+  width: 250px;
 }
     
 .goalInput {
@@ -28,8 +36,9 @@ label, .header {
 
 .bigcontainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .header, body {

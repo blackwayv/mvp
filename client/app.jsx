@@ -4,6 +4,7 @@ import HiScores from './hiscores';
 import Profile from './profile';
 import QuestList from './questlist';
 import ToDo from './todo';
+import Goals from './commongoals'
 
 class App extends React.Component {
   constructor(props) {
@@ -24,13 +25,12 @@ class App extends React.Component {
       <div id='overview'>
         <Profile update={this.updateState} />
         <div className='bigcontainer'>
-          <div className='container1'>
+          {this.state.todo ? <ToDo state={this.state} update={this.updateState} /> : ''}
+          <div className='container'>
             {this.state.quests ? <QuestList state={this.state} update={this.updateState} /> : ''}
-            {this.state.todo ? <ToDo state={this.state} update={this.updateState} /> : ''}
+
           </div>
-          <div className='container2'>
-            {this.state.skills ? <HiScores skills={this.state.skills} /> : ''}
-          </div>
+          {this.state.skills ? <HiScores skills={this.state.skills} /> : ''}
         </div>
       </div>
     );

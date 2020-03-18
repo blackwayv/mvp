@@ -38,7 +38,7 @@ class QuestList extends React.Component {
         requirements.push(<div className='met'>{quest}</div>);
       }
     }
-    if (requirements.length === 2) {
+    if (requirements.length < 2) {
       requirements.push(<div>None</div>);
     } else if (requirements.length > 10) {
       requirements = requirements.slice(0, 9);

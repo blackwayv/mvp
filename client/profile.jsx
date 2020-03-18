@@ -37,7 +37,7 @@ class Profile extends React.Component {
           $.get(`http://localhost:3000/stats/${username}`)
           .then(res => {
             if (!JSON.parse(window.localStorage.getItem(username))) {
-              let user = { username, quests: [], todo: [], skills: res.main.skills };
+              let user = { username, quests: [], todo: [], goals: [], skills: res.main.skills };
               window.localStorage.setItem(username, JSON.stringify(user));
               this.props.update(user);
             } else {
