@@ -7,7 +7,7 @@ body {
   margin-bottom: 1rem;
 }
 
-#quests {
+#quests, #goals {
   width: 220px;
 }
 

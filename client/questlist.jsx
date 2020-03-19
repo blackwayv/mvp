@@ -12,7 +12,8 @@ class QuestList extends React.Component {
   }
 
   generateReqs() {
-    let requirements = [ <label>Requirements:</label> ];
+    let i = 0;
+    let requirements = [ <label key={i++}>Requirements:</label> ];
     let q;
     if (quests.mems[this.state.selected]) {
       q = quests.mems[this.state.selected];
@@ -23,28 +24,28 @@ class QuestList extends React.Component {
     }
     for (let skill in q.skills) {
       if (this.props.state.skills[skill] < q.skills[skill]) {
-        requirements.push(<div>{q.skills[skill] + ' ' + skill}</div>);
+        requirements.push(<div key={i++}>{q.skills[skill] + ' ' + skill}</div>);
       } else {
-        requirements.push(<div className='met'>{q.skills[skill] + ' ' + skill}</div>);
+        requirements.push(<div key={i++} className='met'>{q.skills[skill] + ' ' + skill}</div>);
       }
     }
     if (q.quests.length > 0) {
-      requirements.push(<br/>);
+      requirements.push(<br key={i++} />);
     }
     for (let quest of q.quests) {
       if (this.props.state.quests.indexOf(quest) === -1) {
-        requirements.push(<div>{quest}</div>);
+        requirements.push(<div key={i++}>{quest}</div>);
       } else {
-        requirements.push(<div className='met'>{quest}</div>);
+        requirements.push(<div key={i++} className='met'>{quest}</div>);
       }
     }
     if (requirements.length < 2) {
-      requirements.push(<div>None</div>);
+      requirements.push(<div key={i++}>None</div>);
     } else if (requirements.length > 10) {
       requirements = requirements.slice(0, 9);
-      requirements[9] = <div>...and more. See guide:</div>
+      requirements[9] = <div key={i++} >...and more. See guide:</div>
     }
-    requirements.push(<a href={q.guide}>OSRS Wiki Guide</a>);
+    requirements.push(<a key={i++} href={q.guide} target='_blank'>OSRS Wiki Guide</a>);
     return requirements;
   }
 

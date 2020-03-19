@@ -28,7 +28,7 @@ class App extends React.Component {
           {this.state.todo ? <ToDo state={this.state} update={this.updateState} /> : ''}
           <div className='container'>
             {this.state.quests ? <QuestList state={this.state} update={this.updateState} /> : ''}
-
+            {this.state.quests ? <Goals state={this.state} update={this.updateState} /> : ''}
           </div>
           {this.state.skills ? <HiScores skills={this.state.skills} /> : ''}
         </div>

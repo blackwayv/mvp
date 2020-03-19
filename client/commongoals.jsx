@@ -6,37 +6,38 @@ class Goals extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: "Barrows Gloves"
+      selected: "Fighter torso"
     };
   }
 
   generateReqs() {
-    let requirements = [ <label>Requirements:</label> ];
+    let i = 0;
+    let requirements = [ <label key={i++}>Requirements:</label> ];
     let g = reqs[this.state.selected];
     for (let skill in g.skills) {
-      if (this.props.state.skills[skill] < g.skills[skill]) {
-        requirements.push(<div>{g.skills[skill] + ' ' + skill}</div>);
-      } else {
-        requirements.push(<div className='met'>{g.skills[skill] + ' ' + skill}</div>);
+      if (this.props.state.skills[skill] < g.skills[skill] || !this.props.state.skills[skill]) {
+        requirements.push(<div key={i++}>{g.skills[skill] + ' ' + skill}</div>);
+      } else if (this.props.state.skills[skill]) {
+        requirements.push(<div key={i++} className='met'>{g.skills[skill] + ' ' + skill}</div>);
       }
     }
-    if (g.goals.length > 0) {
-      requirements.push(<br/>);
+    if (g.quests.length > 0) {
+      requirements.push(<br key={i++}/>);
     }
-    for (let quest of g.goals) {
-      if (this.props.state.goals.indexOf(quest) === -1) {
-        requirements.push(<div>{quest}</div>);
+    for (let quest of g.quests) {
+      if (this.props.state.quests.indexOf(quest) === -1) {
+        requirements.push(<div key={i++}>{quest}</div>);
       } else {
-        requirements.push(<div className='met'>{quest}</div>);
+        requirements.push(<div key={i++} className='met'>{quest}</div>);
       }
     }
     if (requirements.length < 2) {
-      requirements.push(<div>None</div>);
+      requirements.push(<div key={i++}>None</div>);
     } else if (requirements.length > 10) {
       requirements = requirements.slice(0, 9);
-      requirements[9] = <div>...and more. See guide:</div>
+      requirements[9] = <div key={i++}>...and more. See guide:</div>;
     }
-    requirements.push(<a href={g.guide}>OSRS Wiki Guide</a>);
+    requirements.push(<a key={i++} href={g.guide} target='_blank'>OSRS Wiki Guide</a>);
     return requirements;
   }
 
@@ -52,12 +53,14 @@ class Goals extends React.Component {
   render() {
     return (
       <div id='secondlist'> 
-        <label>Untradeable Goals<br/></label>
+        <label>Unlockable Goals<br/></label>
         <select id="goals" multiple size="13" onChange={e => {
           let g = document.getElementById('goals');
           this.setState({ selected: g.options[g.selectedIndex].value })
         }}>
-
+          {Object.keys(reqs).map((goal, i) => {
+            return <option value={goal} key={i} style={this.props.state.goals.indexOf(goal) !== -1 ? {color: 'green'} : {color: 'red'}}>{goal}</option>;
+          })}
         </select>
         <div className="requirements">
           {this.props.state.goals ? this.generateReqs() : ''}
