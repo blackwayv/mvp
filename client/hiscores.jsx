@@ -40,7 +40,7 @@ class HiScores extends React.Component {
           .catch(err => {
             document.getElementById('hmessage').innerHTML = 'Invalid user or response from API';
             document.getElementById('hmessage').style = { color: 'red' };
-            console.error(err)
+            console.error(err);
           });
         }}>Update Skills</button>
         <div id='hmessage'></div>

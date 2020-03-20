@@ -56,7 +56,7 @@ class Profile extends React.Component {
             console.error(err);
           });
         }}>Search</button>
-        <span id='pmessage'></span>
+        <div id='pmessage'></div>
       </div>
     );
   }

@@ -1,13 +1,38 @@
 export default {
   "Fighter torso": {
     quests: [],
-    skills: {},
+    skills: { defence: 40, "Honour points in each role": 375},
     guide: "https://oldschool.runescape.wiki/w/Fighter_torso"
+  },
+  "Fremennik helmets": {
+    quests: ["The Fremennik Trials"],
+    skills: { defence: 45 },
+    guide: "https://oldschool.runescape.wiki/w/Fremennik_helmets"
+  },
+  "Helm of neitiznot": {
+    quests: ["The Fremennik Isles"],
+    skills: { defence: 55 },
+    guide: "https://oldschool.runescape.wiki/w/Helm_of_neitiznot"
+  },
+  "Ava's attractor/accumulator": {
+    quests: ["Animal Magnetism"],
+    skills: {},
+    guide: "https://oldschool.runescape.wiki/w/Ava%27s_device"
+  },
+  "Ava's assembler": {
+    quests: ["Dragon Slayer II"],
+    skills: { ranged: 70 },
+    guide: "https://oldschool.runescape.wiki/w/Ava%27s_assembler"
   },
   "Fire cape": {
     quests: [],
     skills: {},
     guide: "https://oldschool.runescape.wiki/w/Fire_cape"
+  },
+  "Infernal cape": {
+    quests: ["Fire cape"],
+    skills: {},
+    guide: "https://oldschool.runescape.wiki/w/Infernal_cape"
   },
   "Graceful outfit": {
     quests: [],

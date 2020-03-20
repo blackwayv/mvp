@@ -13,10 +13,11 @@ body {
 
 #hmessage, #pmessage {
   font-style: italic;
+  height: 16px;
 }
 
 #list {
-  width: 270px;
+  width: 275px;
 }
     
 .goalInput {
@@ -65,10 +66,4 @@ body, option, optgroup, select, label, .header, th, td {
 
 .met {
   text-decoration: line-through;
-}
-
-@media screen and (max-width: 620px) {
-  .bigcontainer {
-    flex-direction: column;
-  }
 }
