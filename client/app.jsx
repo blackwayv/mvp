@@ -30,7 +30,7 @@ class App extends React.Component {
             {this.state.quests ? <QuestList state={this.state} update={this.updateState} /> : ''}
             {this.state.quests ? <Goals state={this.state} update={this.updateState} /> : ''}
           </div>
-          {this.state.skills ? <HiScores skills={this.state.skills} /> : ''}
+          {this.state.skills ? <HiScores state={this.state} update={this.updateState} /> : ''}
         </div>
       </div>
     );

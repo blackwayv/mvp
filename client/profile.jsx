@@ -34,8 +34,11 @@ class Profile extends React.Component {
         <input id="username" type="text" placeholder="Username..." />
         <button id="search" type='submit' onClick={e => {
           let username = document.getElementById('username').value;
+          document.getElementById('pmessage').style = { color: 'white' };
+          document.getElementById('pmessage').innerHTML = ' Searching for profile...';
           $.get(`http://localhost:3000/stats/${username}`)
           .then(res => {
+            document.getElementById('pmessage').innerHTML = ' Profile successfully created/updated';
             if (!JSON.parse(window.localStorage.getItem(username))) {
               let user = { username, quests: [], todo: [], goals: [], skills: res.main.skills };
               window.localStorage.setItem(username, JSON.stringify(user));
@@ -47,8 +50,13 @@ class Profile extends React.Component {
               this.props.update(user);
             }
           })
-          .catch(err => console.error(err));
+          .catch(err => {
+            document.getElementById('pmessage').innerHTML = ' Invalid user or response from API';
+            document.getElementById('pmessage').style = { color: 'red' };
+            console.error(err);
+          });
         }}>Search</button>
+        <span id='pmessage'></span>
       </div>
     );
   }

@@ -3,7 +3,7 @@ body {
   margin-right: 8vw;
 }
 
-#profile {
+#profile, #questlist, #secondlist {
   margin-bottom: 1rem;
 }
 
@@ -11,8 +11,12 @@ body {
   width: 220px;
 }
 
+#hmessage, #pmessage {
+  font-style: italic;
+}
+
 #list {
-  width: 250px;
+  width: 270px;
 }
     
 .goalInput {
