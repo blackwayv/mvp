@@ -30,8 +30,8 @@ class Profile extends React.Component {
         <button id="load" onClick={e => {
           let p = document.getElementById('profile-select');
           this.props.update(JSON.parse(window.localStorage.getItem(p.options[p.selectedIndex].value)));
-        }}>Load</button><br />
-        <input id="username" type="text" placeholder="Username..." />
+        }}>Load</button>
+        <input id="username" type="text" placeholder="Find your profile..." />
         <button id="search" type='submit' onClick={e => {
           let username = document.getElementById('username').value;
           document.getElementById('pmessage').style = { color: 'white' };

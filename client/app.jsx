@@ -23,6 +23,7 @@ class App extends React.Component {
   render() {
     return (
       <div id='overview'>
+        <h1 className='header'>Old School RuneScape Account Progress Tracker</h1>
         <Profile update={this.updateState} />
         <div className='bigcontainer'>
           {this.state.todo ? <ToDo state={this.state} update={this.updateState} /> : ''}

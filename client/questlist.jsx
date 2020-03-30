@@ -42,8 +42,8 @@ class QuestList extends React.Component {
     if (requirements.length < 2) {
       requirements.push(<div key={i++}>None</div>);
     } else if (requirements.length > 10) {
-      requirements = requirements.slice(0, 9);
-      requirements[9] = <div key={i++} >...and more. See guide:</div>
+      requirements = requirements.slice(0, 10);
+      requirements[10] = <div key={i++} >...and more. See guide:</div>
     }
     requirements.push(<a key={i++} href={q.guide} target='_blank'>OSRS Wiki Guide</a>);
     return requirements;
