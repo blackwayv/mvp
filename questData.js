@@ -317,40 +317,60 @@ export default {
         points: 1,
         guide: "https://oldschool.runescape.wiki/w/Dwarf_Cannon" },
       "Eadgar's Ruse": {
-        quests: [],
-        skills: {},
+        quests: [
+          "Druidic Ritual",
+          "Troll Stronghold" ],
+        skills: { 
+          herblore: 31,
+          agility: 44 },
         points: 1,
-        guide: "" },
+        guide: "https://oldschool.runescape.wiki/w/Eadgar%27s_Ruse" },
       "Eagles' Peak": {
         quests: [],
-        skills: {},
-        points: 1,
-        guide: "" },
+        skills: { hunter: 27 },
+        points: 2,
+        guide: "https://oldschool.runescape.wiki/w/Eagles%27_Peak" },
       "Elemental Workshop I": {
         quests: [],
-        skills: {},
+        skills: {
+          mining: 20,
+          smithing: 20,
+          crafting: 20 },
         points: 1,
-        guide: "" },
+        guide: "https://oldschool.runescape.wiki/w/Elemental_Workshop_I" },
       "Elemental Workshop II": {
-        quests: [],
-        skills: {},
+        quests: [ "Elemental Workshop I" ],
+        skills: {
+          magic: 20,
+          smithing: 30 },
         points: 1,
-        guide: "" },
+        guide: "https://oldschool.runescape.wiki/w/Elemental_Workshop_II" },
       "Enakhra's Lament": {
         quests: [],
-        skills: {},
-        points: 1,
-        guide: "" },
+        skills: {
+          crafting: 50,
+          firemaking: 45,
+          prayer: 43,
+          magic: 39,
+          mining: 45 },
+        points: 2,
+        guide: "https://oldschool.runescape.wiki/w/Enakhra%27s_Lament" },
       "Enlightened Journey": {
         quests: [],
-        skills: {},
+        skills: {
+          questpoints: 20,
+          firemaking: 20,
+          farming: 30,
+          crafting: 36 },
         points: 1,
-        guide: "" },
+        guide: "https://oldschool.runescape.wiki/w/Enlightened_Journey" },
       "The Eyes of Glouphrie": {
-        quests: [],
-        skills: {},
-        points: 1,
-        guide: "" },
+        quests: [ "The Grand Tree" ],
+        skills: {
+          construction: 5,
+          magic: 46 },
+        points: 2,
+        guide: "https://oldschool.runescape.wiki/w/The_Eyes_of_Glouphrie" },
       "Fairytale I - Growing Pains": {
         quests: [],
         skills: {},
@@ -373,9 +393,9 @@ export default {
         guide: "" },
       "Fight Arena": {
         quests: [],
-        skills: {},
+        skills: { thieving: 30 },
         points: 1,
-        guide: "" },
+        guide: "https://oldschool.runescape.wiki/w/The_Feud" },
       "Fishing Contest": {
         quests: [],
         skills: {},
@@ -387,15 +407,24 @@ export default {
         points: 1,
         guide: "" },
       "The Forsaken Tower": {
-        quests: [],
+        quests: [ "Client of Kourend" ],
         skills: {},
         points: 1,
-        guide: "" },
+        guide: "https://oldschool.runescape.wiki/w/The_Forsaken_Tower" },
       "The Fremennik Exiles": {
-        quests: [],
-        skills: {},
-        points: 1,
-        guide: "" },
+        quests: [
+          "The Fremmenik Isles",
+          "Lunar Diplomacy",
+          "Mountain Daughter",
+          "Heroes' Quest" ],
+        skills: {
+          crafting: 65,
+          slayer: 60,
+          smithing: 60,
+          fishing: 60,
+          runecrafting: 55 },
+        points: 2,
+        guide: "https://oldschool.runescape.wiki/w/The_Fremennik_Exiles" },
       "The Fremennik Isles": {
         quests: [],
         skills: {},
