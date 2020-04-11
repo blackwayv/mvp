@@ -526,9 +526,10 @@ export default {
         points: 1,
         guide: "" },
       "Heroes' Quest": {
-        quests: [],
+        quests: [
+          "The Lost City" ],
         skills: {},
-        points: 1,
+        points: 3,
         guide: "" },
       "Holy Grail": {
         quests: [],
