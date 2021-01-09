@@ -890,8 +890,7 @@ export default {
       "Sins of the Father": {
         quests: [
           "Vampyre Slayer",
-          "A Taste of Hope"
-        ],
+          "A Taste of Hope" ],
         skills: {
           woodcutting: 62,
           fletching: 60,
