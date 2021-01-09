@@ -157,7 +157,7 @@ export default {
         points: 2,
         guide: "https://oldschool.runescape.wiki/w/Big_Chompy_Bird_Hunting" },
       "Biohazard": {
-        quests: [],
+        quests: [ "Plague City" ],
         skills: {},
         points: 3,
         guide: "https://oldschool.runescape.wiki/w/Biohazard" },
@@ -461,7 +461,9 @@ export default {
         points: 1,
         guide: "https://oldschool.runescape.wiki/w/Gertrude%27s_Cat" },
       "Ghosts Ahoy": {
-        quests: [],
+        quests: [
+          "Priest in Peril",
+          "The Restless Ghost" ],
         skills: {},
         points: 2,
         guide: "https://oldschool.runescape.wiki/w/Ghosts_Ahoy" },
@@ -499,7 +501,7 @@ export default {
         points: 2,
         guide: "https://oldschool.runescape.wiki/w/The_Great_Brain_Robbery" },
       "Grim Tales": {
-        quests: [],
+        quests: [ "Witch's House" ],
         skills: {
           farming: 45,
           herblore: 52,
@@ -769,7 +771,7 @@ export default {
         points: 1,
         guide: "https://oldschool.runescape.wiki/w/Rag_and_Bone_Man" },
       "Rag and Bone Man II": {
-        quests: [],
+        quests: [ "Rag and Bone Man" ],
         skills: {
           slayer: 40,
           defence: 20 },
@@ -831,7 +833,7 @@ export default {
         points: 1,
         guide: "https://oldschool.runescape.wiki/w/Roving_Elves" },
       "Royal Trouble": {
-        quests: [],
+        quests: [ "Throne of Miscellania" ],
         skills: {
           agility: 40,
           slayer: 40 },
@@ -860,7 +862,7 @@ export default {
         points: 1,
         guide: "https://oldschool.runescape.wiki/w/Sea_Slug" },
       "Shades of Mort'ton": {
-        quests: [],
+        quests: [ "Priest in Peril" ],
         skills: {
           crafting: 20,
           herblore: 15,
@@ -954,7 +956,7 @@ export default {
         points: 2,
         guide: "https://oldschool.runescape.wiki/w/Swan_Song" },
       "Tai Bwo Wannai Trio": {
-        quests: [],
+        quests: ["Jungle Potion" ],
         skills: {
           agility: 15,
           cooking: 30,
@@ -1000,7 +1002,9 @@ export default {
         points: 1,
         guide: "https://oldschool.runescape.wiki/w/Temple_of_Ikov" },
       "Throne of Miscellania": {
-        quests: [],
+        quests: [
+          "The Fremmenik Trials",
+          "Heroes' Quest" ],
         skills: {
           woodcutting: 45,
           farming: 10,
@@ -1070,7 +1074,7 @@ export default {
         points: 1,
         guide: "https://oldschool.runescape.wiki/w/Waterfall_Quest" },
       "What Lies Below": {
-        quests: [],
+        quests: [ "Rune Mysteries" ],
         skills: {},
         points: 1,
         guide: "https://oldschool.runescape.wiki/w/What_Lies_Below" },
@@ -1080,7 +1084,9 @@ export default {
         points: 4,
         guide: "https://oldschool.runescape.wiki/w/Witch%27s_House" },
       "Zogre Flesh Eaters": {
-        quests: [],
+        quests: [
+          "Big Chompy Bird Hunting",
+          "Jungle Potion" ],
         skills: {
           smithing: 4,
           herblore: 8,
@@ -1112,7 +1118,7 @@ export default {
         points: 0,
         guide: "https://oldschool.runescape.wiki/w/Curse_of_the_Empty_Lord" },
       "Enchanted Key": {
-        quests: [],
+        quests: [ "Making History" ],
         skills: {},
         points: 0,
         guide: "https://oldschool.runescape.wiki/w/Enchanted_Key" },
