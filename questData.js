@@ -460,6 +460,13 @@ export default {
         skills: {},
         points: 1,
         guide: "https://oldschool.runescape.wiki/w/Gertrude%27s_Cat" },
+      "Getting Ahead": {
+          quests: [],
+          skills: {
+            crafting: 30,
+            construction: 26 },
+          points: 1,
+          guide: "https://oldschool.runescape.wiki/w/Getting_Ahead" },
       "Ghosts Ahoy": {
         quests: [
           "Priest in Peril",
