@@ -762,6 +762,11 @@ export default {
         skills: {},
         points: 1,
         guide: "https://oldschool.runescape.wiki/w/Plague_City" },
+      "A Porcine of Interest": {
+        quests: [],
+        skills: {},
+        points: 1,
+        guide: "https://oldschool.runescape.wiki/w/A_Porcine_of_Interest" },
       "Priest in Peril": {
         quests: [],
         skills: {},

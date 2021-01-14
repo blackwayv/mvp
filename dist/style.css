@@ -87,6 +87,7 @@ body, option, optgroup, select, label, .header, th, td {
 
 .requirements {
   width: 220px;
+  margin-left: 1rem;
   display: inline-block;
   vertical-align: top;
 }

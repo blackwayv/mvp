@@ -85,15 +85,15 @@ class QuestList extends React.Component {
         }}>
           <optgroup label="Free Quests" />
             {Object.keys(quests.free).map((quest, i) => {
-              return <option value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: 'green'} : {color: 'red'}}>{quest}</option>;
+              return <option value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: '#00FF3B'} : {color: 'red'}}>{quest}</option>;
             })}
           <optgroup label="Member's Quests" />
             {Object.keys(quests.mems).map((quest, i) => {
-              return <option value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: 'green'} : {color: 'red'}}>{quest}</option>;
+              return <option value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: '#00FF3B'} : {color: 'red'}}>{quest}</option>;
             })}
           <optgroup label="Miniquests" />
             {Object.keys(quests.mini).map((quest, i) => {
-              return <option value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: 'green'} : {color: 'red'}}>{quest}</option>
+              return <option value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: '#00FF3B'} : {color: 'red'}}>{quest}</option>
             })}
         </select>
         <div className="requirements">

@@ -59,7 +59,7 @@ class Goals extends React.Component {
           this.setState({ selected: g.options[g.selectedIndex].value })
         }}>
           {Object.keys(reqs).map((goal, i) => {
-            return <option value={goal} key={i} style={this.props.state.goals.indexOf(goal) !== -1 ? {color: 'green'} : {color: 'red'}}>{goal}</option>;
+            return <option value={goal} key={i} style={this.props.state.goals.indexOf(goal) !== -1 ? {color: '#00FF3B'} : {color: 'red'}}>{goal}</option>;
           })}
         </select>
         <div className="requirements">

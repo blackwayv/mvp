@@ -13,7 +13,7 @@ class ToDo extends React.Component {
     return (
       <div id='todo'>
         <label>To-Do List</label><br />
-        <select id="list" multiple size="13">
+        <select id="list" multiple size="30">
           {this.props.state.todo.map((item, i) => {
             return <option key={i} value={item}>{item}</option>;
           })}
