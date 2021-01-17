@@ -13,11 +13,11 @@ class ToDo extends React.Component {
     return (
       <div id='todo'>
         <label>To-Do List</label><br />
-        <select id="list" multiple size="30">
+        <div id="list" className="listbox" size="30">
           {this.props.state.todo.map((item, i) => {
-            return <option key={i} value={item}>{item}</option>;
+            return <div key={i} draggable="true" onDragStart={(e) => console.log("suck my ass")} value={item}>{item}</div>;
           })}
-        </select><br />
+        </div><br />
         <input id="addList" name="addList" type="text" placeholder="e.g. Fire cape..." />
         <button id="addSubmit" type="submit" onClick={e => {
           let todoArr = this.props.state.todo;

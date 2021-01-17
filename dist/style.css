@@ -21,7 +21,7 @@ a {
 }
 
 label {
-  font-size: 20px;
+  font-size: 1.3rem;
 }
 
 #username {
@@ -44,6 +44,7 @@ label {
 
 #list {
   width: 275px;
+  height: 20rem;
 }
     
 .goalInput {
@@ -76,12 +77,12 @@ label, .header {
   font-family: arial;
 }
 
-#app, select {
+#app, .listbox {
   background-color: #3f5263;
   border-color: white;
 }
 
-body, option, optgroup, select, label, .header, th, td {
+body, optgroup, .listbox, label, .header, th, td {
   color: white;
 }
 
@@ -94,4 +95,13 @@ body, option, optgroup, select, label, .header, th, td {
 
 .met {
   text-decoration: line-through;
+}
+
+.listbox {
+  border: 1px solid;
+  font: 400 13.3333px Arial;
+  text-align: left;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: auto;
 }

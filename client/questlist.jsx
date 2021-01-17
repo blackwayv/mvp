@@ -79,7 +79,7 @@ class QuestList extends React.Component {
       <div id='questlist'> 
         <label>Quests<br/></label>
         Quest Points: {this.state.questPoints}<br />
-        <select id="quests" multiple size="13" onChange={e => {
+        <select id="quests" className="listbox" multiple size="13" onChange={e => {
           let q = document.getElementById('quests');
           this.setState({ selected: q.options[q.selectedIndex].value })
         }}>
