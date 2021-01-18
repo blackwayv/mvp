@@ -5,7 +5,7 @@ class ToDo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      dragged: 0
     };
   }
 
@@ -15,7 +15,10 @@ class ToDo extends React.Component {
         <label>To-Do List</label><br />
         <div id="list" className="listbox" size="30">
           {this.props.state.todo.map((item, i) => {
-            return <div key={i} draggable="true" onDragStart={(e) => console.log("suck my ass")} value={item}>{item}</div>;
+            return <div key={i} className="listItem" draggable="true" onDragStart={e => {
+              this.state.dragged = document.getElementById("list").children[i];
+              console.log(this.state.dragged);
+            }}>{item}</div>;
           })}
         </div><br />
         <input id="addList" name="addList" type="text" placeholder="e.g. Fire cape..." />

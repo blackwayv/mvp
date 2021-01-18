@@ -105,3 +105,11 @@ body, optgroup, .listbox, label, .header, th, td {
   overflow-y: scroll;
   margin: auto;
 }
+
+.listItem {
+  margin: 1px;
+}
+
+.listItem:hover {
+  background-color: skyblue;
+}
