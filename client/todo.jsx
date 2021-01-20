@@ -5,7 +5,6 @@ class ToDo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dragged: 0
     };
   }
 
@@ -13,42 +12,58 @@ class ToDo extends React.Component {
     return (
       <div id='todo'>
         <label>To-Do List</label><br />
-        <div id='list' className='listbox' onDragOver={e => e.preventDefault()}>
+        <div id='list' className='listbox' onDragOver={e => e.preventDefault()} onDragEnter={e => e.preventDefault()} onDrop={e => {
+          e.preventDefault();
+          if (e.target.id === 'list') {
+            let l = document.getElementById('list');
+            let todoArr = this.props.state.todo;
+            for (let i = 0; i < l.children.length; ++i) {
+              if (l.children[i].innerText === e.dataTransfer.getData('text/plain')) {
+                todoArr.splice(todoArr.indexOf(l.children[i].innerText), 1);
+              }
+            }
+            todoArr.push(e.dataTransfer.getData('text/plain'));
+            this.props.update({ todo: todoArr });
+            let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
+            user.todo = todoArr;
+            window.localStorage.setItem(user.username, JSON.stringify(user));
+          }
+        }}>
           {this.props.state.todo.map((item, i) => {
             return <div key={i} className='listItem' draggable='true' onDragOver={e => e.preventDefault()} onDragStart={e => {
-              this.setState({ dragged: document.getElementById('list').children[i]});
+              e.dataTransfer.setData('text/plain', document.getElementById('list').children[i].innerText);
             }} onDrop={e => {
               e.preventDefault();
-              console.log(e.target)
-              if (e.target.id === 'list') {
-                // remove from todo list and push to bottom
-                let l = document.getElementById('list');
-                let todoArr = this.props.state.todo;
-                for (let i = 0; i < l.options.length; ++i) {
-                  if (l.children[i].innerText === this.state.dragged.innerText) {
-                    todoArr.splice(todoArr.indexOf(l.children[i].innerText), 1);
-                  }
+              // console.log(e.dataTransfer.getData('text/plain'));
+              // move target element down and move dragged element to that position
+              let l = document.getElementById('list');
+              let todoArr = this.props.state.todo;
+
+              for (let i = 0; i < l.children.length; ++i) {
+                if (l.children[i].innerText === e.dataTransfer.getData('text/plain')) {
+                  todoArr.splice(todoArr.indexOf(l.children[i].innerText), 1);
+                } else if (l.children[i].innerText === e.target.innerText) {
+                  todoArr.splice(todoArr.indexOf(l.children[i].innerText), 0, e.dataTransfer.getData('text/plain'));
                 }
-                todoArr.push(this.state.dragged);
-                this.props.update({ todo: todoArr });
-                let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
-                user.todo = todoArr;
-                window.localStorage.setItem(user.username, JSON.stringify(user));
-              } else {
-                // remove from todo list and add it above whatever element
               }
+              this.props.update({ todo: todoArr });
+              let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
+              user.todo = todoArr;
+              window.localStorage.setItem(user.username, JSON.stringify(user));
             }}>{item}</div>;
           })}
         </div><br />
         <input id='addList' name='addList' type='text' placeholder='e.g. Fire cape...' />
         <button id='addSubmit' type='submit' onClick={e => {
-          let todoArr = this.props.state.todo;
-          todoArr.push(document.getElementById('addList').value);
-          this.props.update({ todo: todoArr });
-          let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
-          user.todo = todoArr;
-          window.localStorage.setItem(user.username, JSON.stringify(user));
-          document.getElementById('addList').value = '';
+          if (document.getElementById('addList').value.trim() !== '') {
+            let todoArr = this.props.state.todo;
+            todoArr.push(document.getElementById('addList').value.trim());
+            this.props.update({ todo: todoArr });
+            let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
+            user.todo = todoArr;
+            window.localStorage.setItem(user.username, JSON.stringify(user));
+            document.getElementById('addList').value = '';
+          }
         }}>Add</button>
         <button id='remove' type='submit' onClick={e => {
           let l = document.getElementById('list');
