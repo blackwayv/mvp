@@ -86,7 +86,7 @@ class Goals extends React.Component {
           }
           this.props.update(user);
           window.localStorage.setItem(user.username, JSON.stringify(user));
-        }}>Mark as Complete</button>
+        }}>Complete</button>
         <button id="incomplete" type="submit" onClick={e => {
           let g = document.getElementById('goals');
           let reqsArr = this.props.state.goals.slice();
@@ -101,7 +101,7 @@ class Goals extends React.Component {
           let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
           user.goals = reqsArr;
           window.localStorage.setItem(user.username, JSON.stringify(user));
-        }}>Mark as Incomplete</button>
+        }}>Incomplete</button>
         <button id="add-quest" type="submit" onClick={e => {
           let g = document.getElementById('goals');
           let reqsArr = this.props.state.todo;

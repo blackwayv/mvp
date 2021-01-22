@@ -17,11 +17,7 @@ class ToDo extends React.Component {
           if (e.target.id === 'list') {
             let l = document.getElementById('list');
             let todoArr = this.props.state.todo;
-            for (let i = 0; i < l.children.length; ++i) {
-              if (l.children[i].innerText === e.dataTransfer.getData('text/plain')) {
-                todoArr.splice(todoArr.indexOf(l.children[i].innerText), 1);
-              }
-            }
+            todoArr.splice(todoArr.indexOf(e.dataTransfer.getData('text/plain')), 1);
             todoArr.push(e.dataTransfer.getData('text/plain'));
             this.props.update({ todo: todoArr });
             let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
@@ -34,25 +30,17 @@ class ToDo extends React.Component {
               e.dataTransfer.setData('text/plain', document.getElementById('list').children[i].innerText);
             }} onDrop={e => {
               e.preventDefault();
-              // console.log(e.dataTransfer.getData('text/plain'));
-              // move target element down and move dragged element to that position
-              let l = document.getElementById('list');
               let todoArr = this.props.state.todo;
-
-              for (let i = 0; i < l.children.length; ++i) {
-                if (l.children[i].innerText === e.dataTransfer.getData('text/plain')) {
-                  todoArr.splice(todoArr.indexOf(l.children[i].innerText), 1);
-                } else if (l.children[i].innerText === e.target.innerText) {
-                  todoArr.splice(todoArr.indexOf(l.children[i].innerText), 0, e.dataTransfer.getData('text/plain'));
-                }
-              }
+              let drop = todoArr.indexOf(e.target.innerText);
+              todoArr.splice(todoArr.indexOf(e.dataTransfer.getData('text/plain')), 1);
+              todoArr.splice(drop, 0, e.dataTransfer.getData('text/plain'));
               this.props.update({ todo: todoArr });
               let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
               user.todo = todoArr;
               window.localStorage.setItem(user.username, JSON.stringify(user));
             }}>{item}</div>;
           })}
-        </div><br />
+        </div>
         <input id='addList' name='addList' type='text' placeholder='e.g. Fire cape...' />
         <button id='addSubmit' type='submit' onClick={e => {
           if (document.getElementById('addList').value.trim() !== '') {
