@@ -1,7 +1,7 @@
 body {
   margin-left: 10vw;
   margin-right: 10vw;
-  background-color: white;
+  background-color: #845A6D;
 }
 
 #app {
@@ -10,14 +10,14 @@ body {
 
 button {
   background-color: white;
-  color: #3f5263;
+  color: #3E1929;
   border: 2px solid white;
   margin-left: 5px;
   margin-top: 5px;
 }
 
 a {
-  color: skyblue;
+  color: #5AA9E6;
 }
 
 label {
@@ -78,7 +78,7 @@ label, .header {
 }
 
 #app, .listbox {
-  background-color: #3f5263;
+  background-color: #3E1929;
   border-color: white;
 }
 
@@ -110,6 +110,10 @@ body, optgroup, .listbox, label, .header, th, td {
   margin: 1px;
 }
 
-.listItem:hover {
-  background-color: skyblue;
+.listItem:hover, option:hover {
+  background-color: #8D91C7;
+}
+
+::selection {
+  background-color: #5AA9E6;
 }
