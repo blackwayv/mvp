@@ -43,8 +43,8 @@ label {
 }
 
 #list {
-  width: 275px;
-  height: 20rem;
+  width: 290px;
+  height: 30rem;
 }
     
 .goalInput {
@@ -107,7 +107,7 @@ body, optgroup, .listbox, label, .header, th, td {
 }
 
 .listItem {
-  margin: 1px;
+  margin: 2px;
 }
 
 .listItem:hover, option:hover {
