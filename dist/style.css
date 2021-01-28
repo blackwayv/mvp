@@ -1,9 +1,11 @@
 @font-face {
   font-family: 'runescape_plain_11regular';
-  src: url('../fonts/RuneScape-Plain-11/runescape-plain-11-webfont.woff') format('woff2'),
-       url('../fonts/RuneScape-Plain-11/runescape-plain-11-webfont.woff2') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  src: url('../fonts/RuneScape-Plain-11/runescape-plain-11-webfont.ttf'),
+       url('../fonts/RuneScape-Plain-11/runescape-plain-11-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/RuneScape-Plain-11/runescape-plain-11-webfont.woff2') format('woff2'),
+       url('../fonts/RuneScape-Plain-11/runescape-plain-11-webfont.woff') format('woff'),
+       url('../fonts/RuneScape-Plain-11/runescape-plain-11-webfont.ttf') format('truetype'),
+       url('../fonts/RuneScape-Plain-11/runescape-plain-11-webfont.svg#runescape_plain_11regular') format('svg');
 }
 
 body {
@@ -66,11 +68,11 @@ table {
 th, td {
   padding: 5px;
   text-align: center;
-  font-family: 'runescape_plain_11regular';
+  font-family: Arial, Helvetica, sans-serif;
 }
     
 label, .header {
-  font-family: 'runescape_plain_11regular';
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
 
@@ -82,7 +84,7 @@ label, .header {
 }
 
 .header, body {
-  font-family: 'runescape_plain_11regular';
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #app, .listbox {
@@ -115,7 +117,9 @@ body, optgroup, .listbox, label, .header, th, td {
 }
 
 .listItem {
-  margin: 2px;
+  padding-bottom: 1px;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 
 .listItem:hover, option:hover {
@@ -124,4 +128,9 @@ body, optgroup, .listbox, label, .header, th, td {
 
 ::selection {
   background-color: #5AA9E6;
+}
+
+.check {
+  display: none;
+  float: right;
 }

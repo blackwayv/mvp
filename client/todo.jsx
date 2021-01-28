@@ -15,7 +15,6 @@ class ToDo extends React.Component {
         <div id='list' className='listbox' onDragOver={e => e.preventDefault()} onDragEnter={e => e.preventDefault()} onDrop={e => {
           e.preventDefault();
           if (e.target.id === 'list') {
-            let l = document.getElementById('list');
             let todoArr = this.props.state.todo;
             todoArr.splice(todoArr.indexOf(e.dataTransfer.getData('text/plain')), 1);
             todoArr.push(e.dataTransfer.getData('text/plain'));
@@ -38,7 +37,7 @@ class ToDo extends React.Component {
               let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
               user.todo = todoArr;
               window.localStorage.setItem(user.username, JSON.stringify(user));
-            }}>{item}</div>;
+            }}>{item}<div className='check'>✓</div></div>;
           })}
         </div>
         <input id='addList' name='addList' type='text' placeholder='e.g. Fire cape...' />
@@ -53,7 +52,7 @@ class ToDo extends React.Component {
             document.getElementById('addList').value = '';
           }
         }}>Add</button>
-        <button id='remove' type='submit' onClick={e => {
+        {/* <button id='remove' type='submit' onClick={e => {
           let l = document.getElementById('list');
           let todoArr = this.props.state.todo;
           for (let i = 0; i < l.options.length; ++i) {
@@ -65,7 +64,7 @@ class ToDo extends React.Component {
           let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
           user.todo = todoArr;
           window.localStorage.setItem(user.username, JSON.stringify(user));
-        }}>Remove</button><br />
+        }}>Remove</button><br /> */}
         {/* Move selected: 
         <button id='top' type='submit' onClick={e => {
           let l = document.getElementById('list');
