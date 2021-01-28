@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'runescape_plain_11regular';
+  src: url('../fonts/RuneScape-Plain-11/runescape-plain-11-webfont.woff') format('woff2'),
+       url('../fonts/RuneScape-Plain-11/runescape-plain-11-webfont.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin-left: 10vw;
   margin-right: 10vw;
@@ -58,11 +66,11 @@ table {
 th, td {
   padding: 5px;
   text-align: center;
-  font-family: arial;
+  font-family: 'runescape_plain_11regular';
 }
     
 label, .header {
-  font-family: arial;
+  font-family: 'runescape_plain_11regular';
   font-weight: bold;
 }
 
@@ -74,7 +82,7 @@ label, .header {
 }
 
 .header, body {
-  font-family: arial;
+  font-family: 'runescape_plain_11regular';
 }
 
 #app, .listbox {
