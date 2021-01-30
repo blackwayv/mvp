@@ -37,7 +37,14 @@ class ToDo extends React.Component {
               let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
               user.todo = todoArr;
               window.localStorage.setItem(user.username, JSON.stringify(user));
-            }}>{item}<div className='check'>✓</div></div>;
+            }} onMouseEnter={e => {
+              e.target.children[0].style = 'display: inline';
+              e.target.children[1].style = 'display: inline';
+            }} onMouseOut={e => {
+              console.log(e.target.children);
+              e.target.children[0].style = 'display: none';
+              e.target.children[1].style = 'display: none';
+            }}>{item}<div className='tododelete'>X</div><div className='check'>✓</div></div>;
           })}
         </div>
         <input id='addList' name='addList' type='text' placeholder='e.g. Fire cape...' />
