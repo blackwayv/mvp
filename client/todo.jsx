@@ -39,11 +39,15 @@ class ToDo extends React.Component {
               window.localStorage.setItem(user.username, JSON.stringify(user));
             }} onMouseEnter={e => {
               e.target.children[0].style = 'display: inline';
-              e.target.children[1].style = 'display: inline';
-            }} onMouseOut={e => {
-              console.log(e.target.children);
-              e.target.children[0].style = 'display: none';
-              e.target.children[1].style = 'display: none';
+              e.target.children[1].style = 'display: inline';       
+            }} onMouseLeave={e => {
+              if (e.target.className === 'listItem') {
+                e.target.children[0].style = 'display: none';
+                e.target.children[1].style = 'display: none';       
+              } else {
+                e.target.parentElement.children[0].style = 'display: none';
+                e.target.parentElement.children[1].style = 'display: none';
+              }
             }}>{item}<div className='tododelete'>X</div><div className='check'>✓</div></div>;
           })}
         </div>
