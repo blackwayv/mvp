@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import quests from '../questData.js';
 
 class ToDo extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class ToDo extends React.Component {
         }}>
           {this.props.state.todo.map((item, i) => {
             return <div key={i} className='listItem' draggable='true' onDragOver={e => e.preventDefault()} onDragStart={e => {
-              e.dataTransfer.setData('text/plain', document.getElementById('list').children[i].innerText);
+              e.dataTransfer.setData('text/plain', document.getElementById('list').children[i].innerText.slice(0, -3));
             }} onDrop={e => {
               e.preventDefault();
               let todoArr = this.props.state.todo;
@@ -48,7 +49,16 @@ class ToDo extends React.Component {
                 e.target.parentElement.children[0].style = 'display: none';
                 e.target.parentElement.children[1].style = 'display: none';
               }
-            }}>{item}<div className='tododelete'>X</div><div className='check'>✓</div></div>;
+            }}>{item}<div className='tododelete' onClick={e => {
+              let todoArr = this.props.state.todo;
+              todoArr.splice(todoArr.indexOf(e.target.parentElement.innerText), 1);
+              this.props.update({ todo: todoArr });
+              let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
+              user.todo = todoArr;
+              window.localStorage.setItem(user.username, JSON.stringify(user));
+            }}>X</div><div className='check' onClick={e => {
+ 
+            }}>✓</div></div>;
           })}
         </div>
         <input id='addList' name='addList' type='text' placeholder='e.g. Fire cape...' />

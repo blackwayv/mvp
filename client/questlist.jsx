@@ -57,8 +57,6 @@ class QuestList extends React.Component {
         points += quests.mems[completed[i]].points;
       } else if (quests.free[completed[i]]) {
         points += quests.free[completed[i]].points;
-      } else {
-        points += quests.mini[completed[i]].points;
       }
     }
     this.setState({ questPoints: points });
