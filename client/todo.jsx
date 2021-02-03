@@ -56,13 +56,13 @@ class ToDo extends React.Component {
               let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
               user.todo = todoArr;
               window.localStorage.setItem(user.username, JSON.stringify(user));
-            }}>X</div><div className='check' onClick={e => {
+            }}><img src='~/icons/delete.png'/></div><div className='check' onClick={e => {
  
-            }}>✓</div></div>;
+            }}><img src='~/icons/check.png'/></div></div>;
           })}
         </div>
         <input id='addList' name='addList' type='text' placeholder='e.g. Fire cape...' />
-        <button id='addSubmit' type='submit' onClick={e => {
+        <button id='addSubmit' type='submit' onSubmit={e => {
           if (document.getElementById('addList').value.trim() !== '') {
             let todoArr = this.props.state.todo;
             todoArr.push(document.getElementById('addList').value.trim());
