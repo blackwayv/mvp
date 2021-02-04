@@ -1,6 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 import quests from '../questData.js';
+import check from '../icons/check.png';
+import tododelete from '../icons/delete.png';
 
 class ToDo extends React.Component {
   constructor(props) {
@@ -49,30 +51,31 @@ class ToDo extends React.Component {
                 e.target.parentElement.children[0].style = 'display: none';
                 e.target.parentElement.children[1].style = 'display: none';
               }
-            }}>{item}<div className='tododelete' onClick={e => {
+            }}>{item}<img src={tododelete} className='tododelete' alt='Delete' onClick={e => {
               let todoArr = this.props.state.todo;
               todoArr.splice(todoArr.indexOf(e.target.parentElement.innerText), 1);
               this.props.update({ todo: todoArr });
               let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
               user.todo = todoArr;
               window.localStorage.setItem(user.username, JSON.stringify(user));
-            }}><img src='~/icons/delete.png'/></div><div className='check' onClick={e => {
- 
-            }}><img src='~/icons/check.png'/></div></div>;
+            }}/><img src={check} className='check' alt='Complete' onClick={e => {
+              
+            }}/></div>;
           })}
         </div>
-        <input id='addList' name='addList' type='text' placeholder='e.g. Fire cape...' />
-        <button id='addSubmit' type='submit' onSubmit={e => {
-          if (document.getElementById('addList').value.trim() !== '') {
-            let todoArr = this.props.state.todo;
-            todoArr.push(document.getElementById('addList').value.trim());
-            this.props.update({ todo: todoArr });
-            let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
-            user.todo = todoArr;
-            window.localStorage.setItem(user.username, JSON.stringify(user));
-            document.getElementById('addList').value = '';
-          }
-        }}>Add</button>
+        <form onSubmit={e => {
+            e.preventDefault();
+            if (document.getElementById('addList').value.trim() !== '') {
+              let todoArr = this.props.state.todo;
+              todoArr.push(document.getElementById('addList').value.trim());
+              this.props.update({ todo: todoArr });
+              let user = JSON.parse(window.localStorage.getItem(this.props.state.username));
+              user.todo = todoArr;
+              window.localStorage.setItem(user.username, JSON.stringify(user));
+              document.getElementById('addList').value = '';
+            }}}>
+          <input id='addList' name='addList' type='text' placeholder='e.g. Fire cape...' />
+          <button id='addSubmit' type='submit'>Add</button></form>
         {/* <button id='remove' type='submit' onClick={e => {
           let l = document.getElementById('list');
           let todoArr = this.props.state.todo;
