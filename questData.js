@@ -58,7 +58,7 @@ export default {
       "Pirates Treasure": {
         quests: [],
         skills: {},
-        points: 1,
+        points: 2,
         guide: "https://oldschool.runescape.wiki/w/Pirate%27s_Treasure" },
       "Prince Ali Rescue": {
         quests: [],
@@ -297,7 +297,7 @@ export default {
           thieving: 60,
           construction: 50,
           hitpoints: 50 },
-        points: 1,
+        points: 5,
         guide: "https://oldschool.runescape.wiki/w/Dragon_Slayer_II" },
       "Dream Mentor": {
         quests: [
@@ -542,7 +542,7 @@ export default {
         "Dragon Slayer", 
         "Druidic Ritual" ],
         skills: { questpoints: 55 },
-        points: 3,
+        points: 1,
         guide: "https://oldschool.runescape.wiki/w/Heroes%27_Quest" },
       "Holy Grail": {
         quests: [ "Merlin's Crystal" ],
@@ -705,12 +705,12 @@ export default {
         skills: {
           ranged: 60,
           thieving: 50 },
-        points: 1,
+        points: 2,
         guide: "https://oldschool.runescape.wiki/w/Mourning%27s_Ends_Part_I" },
       "Mourning's End Part II": {
         quests: [ "Mourning's End Part I" ],
         skills: {},
-        points: 1,
+        points: 2,
         guide: "https://oldschool.runescape.wiki/w/Mourning%27s_Ends_Part_II" },
       "Murder Mystery": {
         quests: [],

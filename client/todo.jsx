@@ -29,7 +29,7 @@ class ToDo extends React.Component {
         }}>
           {this.props.state.todo.map((item, i) => {
             return <div key={i} className='listItem' draggable='true' onDragOver={e => e.preventDefault()} onDragStart={e => {
-              e.dataTransfer.setData('text/plain', document.getElementById('list').children[i].innerText.slice(0, -3));
+              e.dataTransfer.setData('text/plain', document.getElementById('list').children[i].innerText);
             }} onDrop={e => {
               e.preventDefault();
               let todoArr = this.props.state.todo;
@@ -59,7 +59,8 @@ class ToDo extends React.Component {
               user.todo = todoArr;
               window.localStorage.setItem(user.username, JSON.stringify(user));
             }}/><img src={check} className='check' alt='Complete' onClick={e => {
-              
+              //Cross off in todo list and complete in quest list or common goals
+              //figure out how to remember what todos were checked off previously
             }}/></div>;
           })}
         </div>
@@ -75,7 +76,8 @@ class ToDo extends React.Component {
               document.getElementById('addList').value = '';
             }}}>
           <input id='addList' name='addList' type='text' placeholder='e.g. Fire cape...' />
-          <button id='addSubmit' type='submit'>Add</button></form>
+          <button id='addSubmit' type='submit'>Add</button>
+        </form>
         {/* <button id='remove' type='submit' onClick={e => {
           let l = document.getElementById('list');
           let todoArr = this.props.state.todo;
