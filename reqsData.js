@@ -74,10 +74,5 @@ export default {
     quests: ["Lair of Tarn Razorlor"],
     skills: {},
     guide: "https://oldschool.runescape.wiki/w/Salve_amulet_(e)"
-  },
-  "Nightmare Zone imbues": {
-    quests: [],
-    skills: { "specific quests": 5 },
-    guide: "https://oldschool.runescape.wiki/w/Nightmare_Zone"
   }
 }
