@@ -42,14 +42,14 @@ class ToDo extends React.Component {
               window.localStorage.setItem(user.username, JSON.stringify(user));
             }} onMouseEnter={e => {
               e.target.children[0].style = 'display: inline';
-              e.target.children[1].style = 'display: inline';       
+              // e.target.children[1].style = 'display: inline';       
             }} onMouseLeave={e => {
               if (e.target.className === 'listItem') {
                 e.target.children[0].style = 'display: none';
-                e.target.children[1].style = 'display: none';       
+                // e.target.children[1].style = 'display: none';       
               } else {
                 e.target.parentElement.children[0].style = 'display: none';
-                e.target.parentElement.children[1].style = 'display: none';
+                // e.target.parentElement.children[1].style = 'display: none';
               }
             }}>{item}<img src={tododelete} className='tododelete' alt='Delete' onClick={e => {
               let todoArr = this.props.state.todo;
@@ -65,7 +65,7 @@ class ToDo extends React.Component {
             }}/>*/}</div>;
           })}
         </div>
-        <form onSubmit={e => {
+        <form autoComplete='off' onSubmit={e => {
             e.preventDefault();
             if (document.getElementById('addList').value.trim() !== '') {
               let todoArr = this.props.state.todo;
@@ -76,7 +76,7 @@ class ToDo extends React.Component {
               window.localStorage.setItem(user.username, JSON.stringify(user));
               document.getElementById('addList').value = '';
             }}}>
-          <input id='addList' name='addList' type='text' placeholder='e.g. Fire cape...' />
+          <input id='addList' name='addList' type='text' placeholder='e.g. Fire cape...' autoComplete='off' />
           <button id='addSubmit' type='submit'>Add</button>
         </form>
       </div>

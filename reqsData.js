@@ -74,5 +74,30 @@ export default {
     quests: ["Lair of Tarn Razorlor"],
     skills: {},
     guide: "https://oldschool.runescape.wiki/w/Salve_amulet_(e)"
-  }
+  },
+  "Rune pouch": {
+    quests: [],
+    skills: {},
+    guide: "https://oldschool.runescape.wiki/w/Rune_pouch"
+  },
+  "God cape": {
+    quests: ["The Mage Arena"],
+    skills: {},
+    guide: "https://oldschool.runescape.wiki/w/God_capes"
+  },
+  "Imbued god cape": {
+    quests: ["The Mage Arena II"],
+    skills: {},
+    guide: "https://oldschool.runescape.wiki/w/God_capes"
+  },
+  "Crystal saw": {
+    quests: ["The Eyes of Glouphrie"],
+    skills: {},
+    guide: "https://oldschool.runescape.wiki/w/Crystal_saw"
+  },
+  "Magic secateurs": {
+    quests: ["Fairytale I - Growing Pains"],
+    skills: {},
+    guide: "https://oldschool.runescape.wiki/w/Magic_secateurs"
+  },
 }
