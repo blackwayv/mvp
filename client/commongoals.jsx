@@ -53,7 +53,7 @@ class Goals extends React.Component {
   render() {
     return (
       <div id='secondlist'> 
-        <label>Unlockable Goals<br/></label>
+        <label>Untradables/Unlockables<br/></label>
         <select id="goals" className="listbox" multiple size="13" onChange={e => {
           let g = document.getElementById('goals');
           this.setState({ selected: g.options[g.selectedIndex].value })
