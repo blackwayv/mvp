@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'runescape_plain_11regular';
+    src: url('/fonts/RuneScape-Plain-11/runescape-plain-11-webfont.eot');
+    src: url('/fonts/RuneScape-Plain-11/runescape-plain-11-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/RuneScape-Plain-11/runescape-plain-11-webfont.woff2') format('woff2'),
+         url('/fonts/RuneScape-Plain-11/runescape-plain-11-webfont.woff') format('woff'),
+         url('/fonts/RuneScape-Plain-11/runescape-plain-11-webfont.ttf') format('truetype'),
+         url('/fonts/RuneScape-Plain-11/runescape-plain-11-webfont.svg#runescape_plain_11regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
