@@ -24,9 +24,9 @@ class QuestList extends React.Component {
     }
     for (let skill in q.skills) {
       if (this.props.state.skills[skill] < q.skills[skill]) {
-        requirements.push(<div key={i++}>{q.skills[skill] + ' ' + skill}</div>);
+        requirements.push(<div className='req' key={i++}>{q.skills[skill] + ' ' + skill}</div>);
       } else {
-        requirements.push(<div key={i++} className='met'>{q.skills[skill] + ' ' + skill}</div>);
+        requirements.push(<div className='req' key={i++} className='met'>{q.skills[skill] + ' ' + skill}</div>);
       }
     }
     if (q.quests.length > 0) {
@@ -34,16 +34,16 @@ class QuestList extends React.Component {
     }
     for (let quest of q.quests) {
       if (this.props.state.quests.indexOf(quest) === -1) {
-        requirements.push(<div key={i++}>{quest}</div>);
+        requirements.push(<div className='req' key={i++}>{quest}</div>);
       } else {
-        requirements.push(<div key={i++} className='met'>{quest}</div>);
+        requirements.push(<div className='req' key={i++} className='met'>{quest}</div>);
       }
     }
     if (requirements.length < 2) {
-      requirements.push(<div key={i++}>None</div>);
+      requirements.push(<div className='req' key={i++}>None</div>);
     } else if (requirements.length > 10) {
       requirements = requirements.slice(0, 10);
-      requirements[10] = <div key={i++} >...and more. See guide:</div>
+      requirements[10] = <div className='req' key={i++} >...and more. See guide:</div>
     }
     requirements.push(<a key={i++} href={q.guide} target='_blank'>OSRS Wiki Guide</a>);
     return requirements;
@@ -75,23 +75,23 @@ class QuestList extends React.Component {
   render() {
     return (
       <div id='questlist'> 
-        <label>Quests<br/></label>
-        Quest Points: {this.state.questPoints}<br />
+        <label>Quests</label>
+        <div className='qp'>Quest Points: {this.state.questPoints}</div>
         <select id="quests" className="listbox" multiple size="13" onChange={e => {
           let q = document.getElementById('quests');
           this.setState({ selected: q.options[q.selectedIndex].value })
         }}>
           <optgroup label="Free Quests" />
             {Object.keys(quests.free).map((quest, i) => {
-              return <option value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: '#00FF3B'} : {color: 'red'}}>{quest}</option>;
+              return <option className='listItem' value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: '#00FF3B'} : {color: 'red'}}>{quest}</option>;
             })}
           <optgroup label="Member's Quests" />
             {Object.keys(quests.mems).map((quest, i) => {
-              return <option value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: '#00FF3B'} : {color: 'red'}}>{quest}</option>;
+              return <option className='listItem' value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: '#00FF3B'} : {color: 'red'}}>{quest}</option>;
             })}
           <optgroup label="Miniquests" />
             {Object.keys(quests.mini).map((quest, i) => {
-              return <option value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: '#00FF3B'} : {color: 'red'}}>{quest}</option>
+              return <option className='listItem' value={quest} key={i} style={this.props.state.quests.indexOf(quest) !== -1 ? {color: '#00FF3B'} : {color: 'red'}}>{quest}</option>
             })}
         </select>
         <div className="requirements">

@@ -58,11 +58,11 @@ table {
 th, td {
   padding: 5px;
   text-align: center;
-  font-family: 'runescape_plain_11regular', Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
 }
     
 label, .header {
-  font-family: 'runescape_plain_11regular', Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   font-weight: bold;
 }
 
@@ -74,7 +74,7 @@ label, .header {
 }
 
 .header, body {
-  font-family: 'runescape_plain_11regular', Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 #app, .listbox {
@@ -95,11 +95,12 @@ body, optgroup, .listbox, label, .header, th, td {
 
 .met {
   text-decoration: line-through;
+  font-family: 'runescape_plain_11regular', Helvetica, sans-serif;
+  font-size: 18px;
 }
 
 .listbox {
   border: 1px solid;
-  font: 400 13.3333px Arial;
   text-align: left;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -107,7 +108,6 @@ body, optgroup, .listbox, label, .header, th, td {
 }
 
 .listItem {
-  padding-bottom: 1px;
   padding-right: 2px;
   padding-left: 2px;
 }
@@ -127,4 +127,9 @@ body, optgroup, .listbox, label, .header, th, td {
   width: 15px;
   margin-right: 0.5rem;
   border-radius: 3px;
+}
+
+td, .listItem, .qp, .req {
+  font-family: 'runescape_plain_11regular', Helvetica, sans-serif;
+  font-size: 18px;
 }
