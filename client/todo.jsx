@@ -1,13 +1,12 @@
 import React from 'react';
 import $ from 'jquery';
-import quests from '../questData.js';
-import check from '../icons/check.png';
 import tododelete from '../icons/delete.png';
 
 class ToDo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      
     };
   }
 
