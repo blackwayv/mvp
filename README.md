@@ -33,4 +33,4 @@ npm start
 
 Currently the program uses localstorage to store all data. Once this has become a website, I can run
 a PostgreSQL database on the instance to keep all the data in cloud storage so it stays persistant.
-Some features are not complete yet. Once I am out of school, this will be my side project.
+Some features are not complete yet.
