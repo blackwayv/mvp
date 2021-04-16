@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import reqs from '../reqsData.js';
 
 class Goals extends React.Component {
@@ -16,7 +15,7 @@ class Goals extends React.Component {
     let g = reqs[this.state.selected];
     for (let skill in g.skills) {
       if (this.props.state.skills[skill] < g.skills[skill] || !this.props.state.skills[skill]) {
-        requirements.push(<div key={i++}>{g.skills[skill] + ' ' + skill}</div>);
+        requirements.push(<div key={i++} className='req'>{g.skills[skill] + ' ' + skill}</div>);
       } else if (this.props.state.skills[skill]) {
         requirements.push(<div key={i++} className='met'>{g.skills[skill] + ' ' + skill}</div>);
       }
@@ -26,13 +25,13 @@ class Goals extends React.Component {
     }
     for (let quest of g.quests) {
       if (this.props.state.quests.indexOf(quest) === -1) {
-        requirements.push(<div key={i++}>{quest}</div>);
+        requirements.push(<div key={i++} className='req'>{quest}</div>);
       } else {
         requirements.push(<div key={i++} className='met'>{quest}</div>);
       }
     }
     if (requirements.length < 2) {
-      requirements.push(<div key={i++}>None</div>);
+      requirements.push(<div key={i++} className='req'>None</div>);
     } else if (requirements.length > 10) {
       requirements = requirements.slice(0, 9);
       requirements[9] = <div key={i++}>...and more. See guide:</div>;
@@ -59,7 +58,7 @@ class Goals extends React.Component {
           this.setState({ selected: g.options[g.selectedIndex].value })
         }}>
           {Object.keys(reqs).map((goal, i) => {
-            return <option value={goal} key={i} style={this.props.state.goals.indexOf(goal) !== -1 ? {color: '#00FF3B'} : {color: 'red'}}>{goal}</option>;
+            return <option className='listItem' value={goal} key={i} style={this.props.state.goals.indexOf(goal) !== -1 ? {color: '#00FF3B'} : {color: 'red'}}>{goal}</option>;
           })}
         </select>
         <div className="requirements">

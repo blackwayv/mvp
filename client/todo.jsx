@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import tododelete from '../icons/delete.png';
 
 class ToDo extends React.Component {

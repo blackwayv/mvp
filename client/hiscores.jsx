@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 
 class HiScores extends React.Component {
   constructor(props) {
@@ -29,7 +28,7 @@ class HiScores extends React.Component {
           let username = this.props.state.username;
           document.getElementById('hmessage').style = { color: 'white' };
           document.getElementById('hmessage').innerHTML = 'Updating...';
-          $.get(`http://localhost:3000/stats/${username}`)
+          fetch(`http://localhost:3000/stats/${username}`)
           .then(res => {
             document.getElementById('hmessage').innerHTML = 'Skills successfully updated';
             let user = JSON.parse(window.localStorage.getItem(username));
