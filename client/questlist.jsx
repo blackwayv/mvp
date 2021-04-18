@@ -25,7 +25,7 @@ class QuestList extends React.Component {
       if (this.props.state.skills[skill] < q.skills[skill]) {
         requirements.push(<div className='req' key={i++}>{q.skills[skill] + ' ' + skill}</div>);
       } else {
-        requirements.push(<div className='req' key={i++} className='met'>{q.skills[skill] + ' ' + skill}</div>);
+        requirements.push(<div className='req met' key={i++}>{q.skills[skill] + ' ' + skill}</div>);
       }
     }
     if (q.quests.length > 0) {
@@ -35,7 +35,7 @@ class QuestList extends React.Component {
       if (this.props.state.quests.indexOf(quest) === -1) {
         requirements.push(<div className='req' key={i++}>{quest}</div>);
       } else {
-        requirements.push(<div className='req' key={i++} className='met'>{quest}</div>);
+        requirements.push(<div className='req met' key={i++}>{quest}</div>);
       }
     }
     if (requirements.length < 2) {

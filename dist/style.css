@@ -27,6 +27,7 @@ label {
 #username {
   margin-left: 5px;
   padding-left: 5px;
+  width: 142px;
 }
 
 #profile, #questlist, #secondlist, #todo {
@@ -34,7 +35,7 @@ label {
 }
 
 #quests, #goals {
-  width: 220px;
+  width: 12rem;
 }
 
 #hmessage, #pmessage {
@@ -43,7 +44,7 @@ label {
 }
 
 #list {
-  width: 290px;
+  width: 20rem;
   height: 34rem;
 }
     
@@ -87,7 +88,7 @@ body, optgroup, .listbox, label, .header, th, td {
 }
 
 .requirements {
-  width: 220px;
+  width: 12rem;
   margin-left: 1rem;
   display: inline-block;
   vertical-align: top;
@@ -95,8 +96,6 @@ body, optgroup, .listbox, label, .header, th, td {
 
 .met {
   text-decoration: line-through;
-  font-family: 'runescape_plain_11regular', Helvetica, sans-serif;
-  font-size: 18px;
 }
 
 .listbox {
@@ -108,8 +107,8 @@ body, optgroup, .listbox, label, .header, th, td {
 }
 
 .listItem {
-  padding-right: 2px;
-  padding-left: 2px;
+  padding-right: 0.2rem;
+  padding-left: 0.2rem;
 }
 
 .listItem:hover, option:hover {
@@ -125,11 +124,17 @@ body, optgroup, .listbox, label, .header, th, td {
   float: right;
   height: 15px;
   width: 15px;
-  margin-right: 0.5rem;
+  margin-right: 0.12rem;
   border-radius: 3px;
 }
 
 td, .listItem, .qp, .req {
   font-family: 'runescape_plain_11regular', Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 590px) {
+  body {
+    margin: 1rem;
+  }
 }

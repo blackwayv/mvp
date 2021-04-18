@@ -17,7 +17,7 @@ class Goals extends React.Component {
       if (this.props.state.skills[skill] < g.skills[skill] || !this.props.state.skills[skill]) {
         requirements.push(<div key={i++} className='req'>{g.skills[skill] + ' ' + skill}</div>);
       } else if (this.props.state.skills[skill]) {
-        requirements.push(<div key={i++} className='met'>{g.skills[skill] + ' ' + skill}</div>);
+        requirements.push(<div key={i++} className='req met'>{g.skills[skill] + ' ' + skill}</div>);
       }
     }
     if (g.quests.length > 0) {
@@ -27,7 +27,7 @@ class Goals extends React.Component {
       if (this.props.state.quests.indexOf(quest) === -1) {
         requirements.push(<div key={i++} className='req'>{quest}</div>);
       } else {
-        requirements.push(<div key={i++} className='met'>{quest}</div>);
+        requirements.push(<div key={i++} className='req met'>{quest}</div>);
       }
     }
     if (requirements.length < 2) {
