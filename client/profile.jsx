@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -36,7 +35,7 @@ class Profile extends React.Component {
             let username = document.getElementById('username').value;
             document.getElementById('pmessage').style = { color: 'white' };
             document.getElementById('pmessage').innerHTML = ' Searching for profile...';
-            $.get(`http://localhost:3000/stats/${username}`)
+            fetch(`http://localhost:3000/stats/${username}`)
             .then(res => {
               document.getElementById('pmessage').innerHTML = ' Profile successfully created/updated';
               if (!JSON.parse(window.localStorage.getItem(username))) {

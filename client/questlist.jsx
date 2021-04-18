@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import quests from '../questData.js';
 
 class QuestList extends React.Component {
